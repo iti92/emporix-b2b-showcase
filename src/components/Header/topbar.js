@@ -61,9 +61,9 @@ const MegaNav = ({ showMegaMenuContent, setShowMegaMenuContent }) => {
           onClick={() => setShowMegaMenuContent(false)}
         >
           <div className="row w-full h-full flex">
-            <div className="h-full w-[24%] mega_content_bg">
+            <div className="h-full w-[24%] !bg-eerieBlack">
               <div className="pl-[72px] pt-[72px] overflow-y-auto max-h-full">
-                <ul className=" text-white text-base font-bold">
+                <ul className="text-white text-base font-bold">
                   {subMenuItems.map((item, index) => (
                     <Link replace key={index} to={addTenantToUrl(item.url)}>
                       <li
@@ -84,7 +84,7 @@ const MegaNav = ({ showMegaMenuContent, setShowMegaMenuContent }) => {
               </div>
             </div>
             <div
-              className="h-full w-[76%] grid grid-cols-4 overflow-y-auto gap-4 pl-[72px] pt-[72px] max-h-full"
+              className="h-full w-[76%] grid grid-cols-4 overflow-y-auto gap-4 pl-[72px] pt-[24px] max-h-full"
               onMouseOver={() => setShowMegaMenuRightContent(true)}
             >
               {showMegaMenuRightContent
@@ -126,7 +126,7 @@ const TopNav = ({ title }) => {
     <div
       className={
         title === 'home'
-          ? 'desktop_only_flex w-full md:h-36 absolute z-10'
+          ? 'desktop_only_flex w-full md:h-36 absolute z-10 bg-white'
           : title === ''
           ? 'nav-background-title desktop_only_flex h-36'
           : 'desktop_only_flex w-full md:h-60 absolute z-10 nav-background-title'

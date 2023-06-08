@@ -26,27 +26,27 @@ const EachProduct = ({ item, available, rating, productCount }) => {
     navigate(`/${userTenant}/product/details/${item.id}`)
   }, [userTenant, item.id])
   return (
-    <div className="" onClick={handleProductDetail}>
-      <div className="w-full h-3  justify-between hidden lg:flex">
+    <div className="m-4" onClick={handleProductDetail}>
+      <div className="w-full h-5 justify-between hidden lg:flex">
         {item.productType !== 'PARENT_VARIANT' && (
           <div
             className={
               available
-                ? 'text-brightGreen font-inter font-bold text-xs pt-[6px] float-right lg:float-none'
-                : 'text-brightGreen font-inter font-bold text-xs pt-[6px] float-right lg:float-none'
+                ? 'product-available'
+                : 'prodcut-unavailable'
             }
           >
             {available ? 'In Stock' : 'Out Of Stock'}
           </div>
         )}
-        <div className="flex h-5 float-right lg:float-none">
+        <div className="flex h-5 float-right lg:float-none text-[14px]/[20px]">
           <ReactStars size={16} value={rating} color2={'#FBB13C'} />(
           {productCount})
         </div>
       </div>
 
-      <div className=" block float-right lg:hidden">
-        <div className=" flex h-5  float-right">
+      <div className="block float-right lg:hidden">
+        <div className="flex h-5  float-right">
           <ReactStars size={16} value={rating} color2={'#FBB13C'} />(
           {productCount})
         </div>
@@ -54,22 +54,22 @@ const EachProduct = ({ item, available, rating, productCount }) => {
         <div
           className={
             available
-              ? 'text-brightGreen font-inter font-bold text-xs pt-[6px] float-right lg:float-none'
-              : 'text-brightGreen font-inter font-bold text-xs pt-[6px] float-right lg:float-none'
+              ? 'product-available'
+              : 'product-unavailable'
           }
         >
           {available ? 'In Stock' : 'Out Of Stock'}
         </div>
       </div>
 
-      <div className="pt-10 lg:w-[200px] lg:h-[260px] w-[100px] h-[140px] md:w-[150px] md:h-[200px] items-center mx-auto ">
+      <div className="pt-9 lg:w-[200px] lg:h-[260px] w-[100px] h-[140px] md:w-[150px] md:h-[200px] items-center mx-auto ">
         <img src={trimImage(`${imageSrc}`)} className="mx-auto h-full" />
       </div>
-      <div className="mt-2 lg:mt-11 w-full font-inter">
-        <div className="text-left text-xs leading-xs text-gray">
+      <div className="mt-2 lg:mt-9 w-full font-inter">
+        <div className="text-left text-[14px]/[20px] text-gray">
           {item.code}
         </div>
-        <div className="mt-2 text-left max-w-[240px] min-h-[60px] lg:h-12 text-sm font-bold">
+        <div className="mt-[6px] text-left max-w-[240px] min-h-[60px] lg:h-12 text-[16px]/[24px] font-medium">
           {item.name}
         </div>
       </div>
@@ -104,9 +104,9 @@ const EachProduct = ({ item, available, rating, productCount }) => {
                     <div className="text-base lg:text-xl leading-[24px] font-bold ml-1">
                       <>
                         <CurrencyBeforeValue value={price} />{' '}
-                        <span className="text-xs font-normal text-gray ml-4">
+                        <div className="text-xs font-normal text-gray ml-4">
                           (Excl. VAT)
-                        </span>
+                        </div>
                       </>
                     </div>
                   </>
